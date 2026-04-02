@@ -1,0 +1,20 @@
+[opener]
+play_music = [
+    { run = 'flatpak run io.bassi.Amberol "$(realpath "$1")"', orphan = true, desc = "Amberol" },
+    { run = 'vlc "$@"', orphan = true, desc = "VLC" },
+]
+show_image = [
+    { run = 'gwenview "$@"', orphan = true, desc = "Gwenview" },
+]
+
+[open]
+prepend_rules = [
+    { name = "*.mp3", use = "play_music" },
+    { name = "*.flac", use = "play_music" },
+    { name = "*.wav", use = "play_music" },
+    { mime = "audio/*", use = "play_music" },
+    
+    # Imágenes
+    { name = "*.{jpg,jpeg,png,webp,gif}", use = "show_image" },
+    { mime = "image/*", use = "show_image" },
+]
