@@ -10,6 +10,9 @@ nvm install 25
 # Verify
 node -v # Should print "v24.14.1".
 npm -v # Should print "11.11.0".
+
+# Install pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 ```
 
 ### Docker
